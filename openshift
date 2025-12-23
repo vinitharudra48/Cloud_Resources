@@ -1,0 +1,9 @@
+jumpserver
+Cluster
+projects,namespaces 
+
+-namespace = Kubernetes term (technical, basic)
+Project = OpenShift term (namespace + extras)
+Every project is backed by a namespace
+They look the same, but OpenShift adds user access, UI info, metadata
+pods - have one/more containers
