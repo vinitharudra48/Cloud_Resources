@@ -1,5 +1,20 @@
 jumpserver
-Cluster
+# Cluster
+
+An OpenShift cluster is a group of master and worker nodes that work together to run containerized applications. The control plane manages the cluster, while worker nodes run the workloads (pods). A cluster provides scalability, high availability, networking, storage, and security for all workloads.
+
+<img width="259" height="188" alt="image" src="https://github.com/user-attachments/assets/b9a5c30a-1d8e-4cca-887d-143a1e72dd49" />
+
+In OpenShift, the load balancer (LB) sits in front of the control plane and routes traffic to the master nodes.
+
+Each worker has:
+
+kubelet
+
+kube-proxy
+
+CRI-O (container runtime)
+
 # Projects and Namespaces 
 
 namespace = Kubernetes term (technical, basic)
@@ -61,3 +76,9 @@ May hide some system namespaces depending on RBAC
 
 
 # Pods - have one/more containers
+
+
+
+
+
+
