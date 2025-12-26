@@ -75,7 +75,97 @@ Shows OpenShift projects
 May hide some system namespaces depending on RBAC
 
 
+# Nodes
+
+node in OpenShift is basically a machine (server or VM) in the cluster where OpenShift runs workloads and system components.
+
+👉 Think of a node as a worker in a factory.The cluster is the entire factory.
+
+Each node has a role:
+
+Some nodes manage the cluster → control‑plane/master nodes
+
+Some nodes run applications → worker nodes
+
+oc get nodes -o wide
+
+oc describe node <node-name>
+
+oc adm top nodes  # gives cpu and memory usage of nodes
+
 # Pods - have one/more containers
+
+A Pod is the smallest deployable unit in Kubernetes/OCP.
+👉 Think of a Pod as a box that contains one or more containers that always run together.
+
+✔ Pod has its own IP
+
+Each Pod gets an IP from the cluster network.
+
+✔ Pod is ephemeral
+
+If a pod crashes, Kubernetes creates a new one with a different IP.
+
+So pod IPs are NOT permanent.
+
+✔ Pod run inside a Node
+
+Scheduler decides which node.
+
+✔ Pod is controlled by higher-level objects:
+
+Deployment
+
+StatefulSet
+
+DaemonSet
+
+ReplicaSet
+
+You should NOT create pods manually for apps in production.
+
+oc get pods -A
+
+oc get pods -A -o wide
+
+oc describe pod <pod-name>
+
+oc get pod <pod-name> -o yaml
+
+oc exec -it <pod-name> -- bash
+
+oc logs -f <pod-name>
+
+Pods cannot be restarted directly.
+
+You restart the deployment:  oc rollout restart deployment <deployment-name>
+
+You restart the statefulset:    oc rollout restart statefulset <sts-name>
+
+oc delete pod <pod-name>
+
+oc debug pod/<pod-name>
+
+
+# Pod lifecycle events:
+
+Pending → Pod accepted, waiting for scheduling
+
+Scheduled → Assigned to a node
+
+ContainerCreating → Images pulled, volumes attached
+
+Running → Pod is healthy and serving
+
+CrashLoopBackOff → Container keeps crashing
+
+ImagePullBackOff / Error → Image issues
+
+Terminating → Pod shutting down
+
+Succeeded → Completed and exited 0
+
+Failed → Pod finished with errors
 
 
 
