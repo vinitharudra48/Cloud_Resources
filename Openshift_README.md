@@ -1,4 +1,4 @@
-jumpserver
+
 # Cluster
 
 An OpenShift cluster is a group of master and worker nodes that work together to run containerized applications. The control plane manages the cluster, while worker nodes run the workloads (pods). A cluster provides scalability, high availability, networking, storage, and security for all workloads.
@@ -167,6 +167,26 @@ Succeeded → Completed and exited 0
 
 Failed → Pod finished with errors
 
+# Deployment
+
+A Deployment is a higher‑level controller that manages Pods for you.
+
+Deployment = A manager that ensures your desired number of Pod replicas are always running.
+
+
+Key Features of Deployments:
+
+✔️ Pods self‑heal (restart if failed)
+
+✔️ Rolling updates (0-downtime upgrade)
+
+✔️ Rollbacks (if new version fails)
+
+✔️ Scaling up/down
+
+✔️ Version history maintained
+
+✔️ Declarative configuration (YAML)
 
 
 
