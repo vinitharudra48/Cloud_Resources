@@ -188,7 +188,9 @@ Key Features of Deployments:
 
 ✔️ Declarative configuration (YAML)
 
+# OPENSHIFT DEVELOPER WORKFLOW
 
+<img width="1536" height="1024" alt="Designer" src="https://github.com/user-attachments/assets/f3cde63f-c906-4708-a598-7ca12e9bd22d" />
 
 
 
