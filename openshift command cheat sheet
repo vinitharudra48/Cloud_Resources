@@ -35,7 +35,8 @@ A handy cheat sheet for OpenShift developers and administrators using the `oc` C
 - `oc adm top pods -A --sort-by cpu | head -n 20` - Check the pod utilization based on CPU
 - `oc adm top pods -A --sort-by memory | head -n 20` - Check the pod utilization based on Memory
 - `oc get pods --all-namespaces --field-selector=status.phase=Running -o json | jq '.items[]|select(any( .status.containerStatuses[]; .restartCount > 3))|.metadata.name'` -Check the restarted pods 
-
+- oc get pods --all-namespaces|egrep -v 'Running | Completed'
+- oc get pods --all-namespaces | grep -Ev '([0-9]+)/\1|Complete'
 
 
 
